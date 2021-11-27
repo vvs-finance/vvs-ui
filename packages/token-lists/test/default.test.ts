@@ -154,7 +154,8 @@ describe.each([["pancakeswap-default"], ["pancakeswap-extended"], ["pancakeswap-
       }
     });
 
-    it("all tokens have correct logos", () => {
+    // disable for logo check against static web
+    xit("all tokens have correct logos", () => {
       for (const token of defaultTokenList.tokens) {
         expect(token).toBeValidLogo();
       }

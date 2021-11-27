@@ -1,5 +1,5 @@
 {
-  "name": "@pancakeswap/token-lists",
+  "name": "vvs-token-lists",
   "version": "2.18.3",
   "main": "dist/index.js",
   "type": "module",

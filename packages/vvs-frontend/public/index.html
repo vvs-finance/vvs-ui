@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!-- Links -->
+    <!-- <link rel="preconnect" href="%REACT_APP_NODE_1%" /> -->
+    <!-- Temporarily disabled for Google Load testing --
+    <link rel="preconnect" href="%REACT_APP_NODE_2%" />
+    <link rel="preconnect" href="%REACT_APP_NODE_3%" />
+    -->
+    <!-- <link rel="preconnect" href="%REACT_APP_NODE_4%" /> -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- Effra -->
+    <!-- Soleil -->
+    <link rel="stylesheet" href="https://use.typekit.net/trz1lxi.css">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="canonical" href="https://vvs.finance/" data-baseprotocol="https:" data-basehost="vvs.finance">
+    <!-- Meta -->
+    <title>VVS Finance | Simple DeFi Trading For All</title>
+    <meta
+      name="description"
+      content="VVS Finance is your gateway to the decentralized finance movement.Take control of your finances and earn sparkly VVS rewards.Low fees, fast transactions and competitive earnings."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1" />
+    <meta name="theme-color" content="#1FC7D4" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="%PUBLIC_URL%/logo.png" />
+    <meta name="twitter:title" content="VVS Finance | Simple DeFi Trading For All" />
+    <meta name="twitter:description" content="VVS Finance is your gateway to the decentralized finance movement.Take control of your finances and earn sparkly VVS rewards.Low fees, fast transactions and competitive earnings." />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="VVS Finance | Simple DeFi Trading For All" />
+    <meta property="og:description" content="VVS Finance is your gateway to the decentralized finance movement.Take control of your finances and earn sparkly VVS rewards.Low fees, fast transactions and competitive earnings." />
+    <meta property="og:image" content="%PUBLIC_URL%/logo.png" />
+    <meta property="og:site_name" content="VVS Finance" />
+    <meta property="og:url" content="https://vvs.finance/" />
+
+    <!-- GTAG -->
+    <script>
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : ''
+        j.async = true
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, 'script', 'dataLayer', '%REACT_APP_GTAG%')
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=%REACT_APP_GOOGLE_ANALYTICS_ID%"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '%REACT_APP_GOOGLE_ANALYTICS_ID%');
+    </script>
+  </head>
+  <body>
+    <!-- GTAG (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=%REACT_APP_GTAG%"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <div id="portal-root"></div>
+  </body>
+</html>

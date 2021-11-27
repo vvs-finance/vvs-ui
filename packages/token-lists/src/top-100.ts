@@ -140,7 +140,7 @@ const main = async (): Promise<void> => {
           remove: /[^\w\s.]/g,
         }).toUpperCase(),
         address: checksummedAddress,
-        chainId: 56,
+        chainId: 25,
         decimals: item.baseCurrency.decimals,
         logoURI: getTokenLogo(checksummedAddress),
       };

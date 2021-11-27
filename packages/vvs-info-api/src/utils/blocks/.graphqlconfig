@@ -1,0 +1,15 @@
+{
+  "name": "Cronos Blocks",
+  "schemaPath": "schema.graphql",
+  "extensions": {
+    "endpoints": {
+      "Cronos Blocks": {
+        "url": "https://graph.vvs.finance/blocks",
+        "headers": {
+          "user-agent": "JS GraphQL"
+        },
+        "introspect": false
+      }
+    }
+  }
+}

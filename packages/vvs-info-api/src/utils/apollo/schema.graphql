@@ -1,0 +1,592 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+    subscription: Subscription
+}
+
+type Bundle {
+    bnbPrice: BigDecimal!
+    id: ID!
+}
+
+type Factory {
+    id: ID!
+    pairCount: BigInt!
+}
+
+type Pair {
+    id: ID!
+    reserve0: BigDecimal!
+    reserve1: BigDecimal!
+    reserveBNB: BigDecimal!
+    reserveUSD: BigDecimal!
+    token0: Token!
+    token0Price: BigDecimal!
+    token1: Token!
+    token1Price: BigDecimal!
+    trackedReserveBNB: BigDecimal!
+    trackedReserveUSD: BigDecimal!
+    untrackedVolumeBNB: BigDecimal!
+    untrackedVolumeUSD: BigDecimal!
+    volumeBNB: BigDecimal!
+    volumeToken0: BigDecimal!
+    volumeToken1: BigDecimal!
+    volumeUSD: BigDecimal!
+}
+
+type PairSimple {
+    address: Bytes!
+    id: ID!
+    token0: Token!
+    token1: Token!
+}
+
+type Query {
+    "Access to subgraph metadata"
+    _meta(block: Block_height): _Meta_
+    bundle(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        id: ID!
+    ): Bundle
+    bundles(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        first: Int = 100,
+        orderBy: Bundle_orderBy,
+        orderDirection: OrderDirection,
+        skip: Int = 0,
+        where: Bundle_filter
+    ): [Bundle!]!
+    factories(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        first: Int = 100,
+        orderBy: Factory_orderBy,
+        orderDirection: OrderDirection,
+        skip: Int = 0,
+        where: Factory_filter
+    ): [Factory!]!
+    factory(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        id: ID!
+    ): Factory
+    pair(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        id: ID!
+    ): Pair
+    pairSimple(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        id: ID!
+    ): PairSimple
+    pairSimples(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        first: Int = 100,
+        orderBy: PairSimple_orderBy,
+        orderDirection: OrderDirection,
+        skip: Int = 0,
+        where: PairSimple_filter
+    ): [PairSimple!]!
+    pairs(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        first: Int = 100,
+        orderBy: Pair_orderBy,
+        orderDirection: OrderDirection,
+        skip: Int = 0,
+        where: Pair_filter
+    ): [Pair!]!
+    token(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        id: ID!
+    ): Token
+    tokens(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        first: Int = 100,
+        orderBy: Token_orderBy,
+        orderDirection: OrderDirection,
+        skip: Int = 0,
+        where: Token_filter
+    ): [Token!]!
+}
+
+type Subscription {
+    "Access to subgraph metadata"
+    _meta(block: Block_height): _Meta_
+    bundle(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        id: ID!
+    ): Bundle
+    bundles(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        first: Int = 100,
+        orderBy: Bundle_orderBy,
+        orderDirection: OrderDirection,
+        skip: Int = 0,
+        where: Bundle_filter
+    ): [Bundle!]!
+    factories(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        first: Int = 100,
+        orderBy: Factory_orderBy,
+        orderDirection: OrderDirection,
+        skip: Int = 0,
+        where: Factory_filter
+    ): [Factory!]!
+    factory(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        id: ID!
+    ): Factory
+    pair(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        id: ID!
+    ): Pair
+    pairSimple(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        id: ID!
+    ): PairSimple
+    pairSimples(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        first: Int = 100,
+        orderBy: PairSimple_orderBy,
+        orderDirection: OrderDirection,
+        skip: Int = 0,
+        where: PairSimple_filter
+    ): [PairSimple!]!
+    pairs(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        first: Int = 100,
+        orderBy: Pair_orderBy,
+        orderDirection: OrderDirection,
+        skip: Int = 0,
+        where: Pair_filter
+    ): [Pair!]!
+    token(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        id: ID!
+    ): Token
+    tokens(
+        "The block at which the query should be executed. Can either be an `{ number: Int }` containing the block number or a `{ hash: Bytes }` value containing a block hash. Defaults to the latest block when omitted."
+        block: Block_height,
+        first: Int = 100,
+        orderBy: Token_orderBy,
+        orderDirection: OrderDirection,
+        skip: Int = 0,
+        where: Token_filter
+    ): [Token!]!
+}
+
+type Token {
+    decimals: BigInt!
+    derivedBNB: BigDecimal!
+    derivedUSD: BigDecimal!
+    id: ID!
+    name: String!
+    symbol: String!
+}
+
+type _Block_ {
+    "The hash of the block"
+    hash: Bytes
+    "The block number"
+    number: Int!
+}
+
+"The type for the top-level _meta field"
+type _Meta_ {
+    """
+
+    Information about a specific subgraph block. The hash of the block
+    will be null if the _meta field has a block constraint that asks for
+    a block number. It will be filled if the _meta field has no block constraint
+    and therefore asks for the latest  block
+    """
+    block: _Block_!
+    "The deployment ID"
+    deployment: String!
+    "If `true`, the subgraph encountered indexing errors at some past block"
+    hasIndexingErrors: Boolean!
+}
+
+enum Bundle_orderBy {
+    bnbPrice
+    id
+}
+
+enum Factory_orderBy {
+    id
+    pairCount
+}
+
+enum OrderDirection {
+    asc
+    desc
+}
+
+enum PairSimple_orderBy {
+    address
+    id
+    token0
+    token1
+}
+
+enum Pair_orderBy {
+    id
+    reserve0
+    reserve1
+    reserveBNB
+    reserveUSD
+    token0
+    token0Price
+    token1
+    token1Price
+    trackedReserveBNB
+    trackedReserveUSD
+    untrackedVolumeBNB
+    untrackedVolumeUSD
+    volumeBNB
+    volumeToken0
+    volumeToken1
+    volumeUSD
+}
+
+enum Token_orderBy {
+    decimals
+    derivedBNB
+    derivedUSD
+    id
+    name
+    symbol
+}
+
+enum _SubgraphErrorPolicy_ {
+    "Data will be returned even if the subgraph has indexing errors"
+    allow
+    "If the subgraph has indexing errors, data will be omitted. The default."
+    deny
+}
+
+input Block_height {
+    hash: Bytes
+    number: Int
+}
+
+input Bundle_filter {
+    bnbPrice: BigDecimal
+    bnbPrice_gt: BigDecimal
+    bnbPrice_gte: BigDecimal
+    bnbPrice_in: [BigDecimal!]
+    bnbPrice_lt: BigDecimal
+    bnbPrice_lte: BigDecimal
+    bnbPrice_not: BigDecimal
+    bnbPrice_not_in: [BigDecimal!]
+    id: ID
+    id_gt: ID
+    id_gte: ID
+    id_in: [ID!]
+    id_lt: ID
+    id_lte: ID
+    id_not: ID
+    id_not_in: [ID!]
+}
+
+input Factory_filter {
+    id: ID
+    id_gt: ID
+    id_gte: ID
+    id_in: [ID!]
+    id_lt: ID
+    id_lte: ID
+    id_not: ID
+    id_not_in: [ID!]
+    pairCount: BigInt
+    pairCount_gt: BigInt
+    pairCount_gte: BigInt
+    pairCount_in: [BigInt!]
+    pairCount_lt: BigInt
+    pairCount_lte: BigInt
+    pairCount_not: BigInt
+    pairCount_not_in: [BigInt!]
+}
+
+input PairSimple_filter {
+    address: Bytes
+    address_contains: Bytes
+    address_in: [Bytes!]
+    address_not: Bytes
+    address_not_contains: Bytes
+    address_not_in: [Bytes!]
+    id: ID
+    id_gt: ID
+    id_gte: ID
+    id_in: [ID!]
+    id_lt: ID
+    id_lte: ID
+    id_not: ID
+    id_not_in: [ID!]
+    token0: String
+    token0_contains: String
+    token0_ends_with: String
+    token0_gt: String
+    token0_gte: String
+    token0_in: [String!]
+    token0_lt: String
+    token0_lte: String
+    token0_not: String
+    token0_not_contains: String
+    token0_not_ends_with: String
+    token0_not_in: [String!]
+    token0_not_starts_with: String
+    token0_starts_with: String
+    token1: String
+    token1_contains: String
+    token1_ends_with: String
+    token1_gt: String
+    token1_gte: String
+    token1_in: [String!]
+    token1_lt: String
+    token1_lte: String
+    token1_not: String
+    token1_not_contains: String
+    token1_not_ends_with: String
+    token1_not_in: [String!]
+    token1_not_starts_with: String
+    token1_starts_with: String
+}
+
+input Pair_filter {
+    id: ID
+    id_gt: ID
+    id_gte: ID
+    id_in: [ID!]
+    id_lt: ID
+    id_lte: ID
+    id_not: ID
+    id_not_in: [ID!]
+    reserve0: BigDecimal
+    reserve0_gt: BigDecimal
+    reserve0_gte: BigDecimal
+    reserve0_in: [BigDecimal!]
+    reserve0_lt: BigDecimal
+    reserve0_lte: BigDecimal
+    reserve0_not: BigDecimal
+    reserve0_not_in: [BigDecimal!]
+    reserve1: BigDecimal
+    reserve1_gt: BigDecimal
+    reserve1_gte: BigDecimal
+    reserve1_in: [BigDecimal!]
+    reserve1_lt: BigDecimal
+    reserve1_lte: BigDecimal
+    reserve1_not: BigDecimal
+    reserve1_not_in: [BigDecimal!]
+    reserveBNB: BigDecimal
+    reserveBNB_gt: BigDecimal
+    reserveBNB_gte: BigDecimal
+    reserveBNB_in: [BigDecimal!]
+    reserveBNB_lt: BigDecimal
+    reserveBNB_lte: BigDecimal
+    reserveBNB_not: BigDecimal
+    reserveBNB_not_in: [BigDecimal!]
+    reserveUSD: BigDecimal
+    reserveUSD_gt: BigDecimal
+    reserveUSD_gte: BigDecimal
+    reserveUSD_in: [BigDecimal!]
+    reserveUSD_lt: BigDecimal
+    reserveUSD_lte: BigDecimal
+    reserveUSD_not: BigDecimal
+    reserveUSD_not_in: [BigDecimal!]
+    token0: String
+    token0Price: BigDecimal
+    token0Price_gt: BigDecimal
+    token0Price_gte: BigDecimal
+    token0Price_in: [BigDecimal!]
+    token0Price_lt: BigDecimal
+    token0Price_lte: BigDecimal
+    token0Price_not: BigDecimal
+    token0Price_not_in: [BigDecimal!]
+    token0_contains: String
+    token0_ends_with: String
+    token0_gt: String
+    token0_gte: String
+    token0_in: [String!]
+    token0_lt: String
+    token0_lte: String
+    token0_not: String
+    token0_not_contains: String
+    token0_not_ends_with: String
+    token0_not_in: [String!]
+    token0_not_starts_with: String
+    token0_starts_with: String
+    token1: String
+    token1Price: BigDecimal
+    token1Price_gt: BigDecimal
+    token1Price_gte: BigDecimal
+    token1Price_in: [BigDecimal!]
+    token1Price_lt: BigDecimal
+    token1Price_lte: BigDecimal
+    token1Price_not: BigDecimal
+    token1Price_not_in: [BigDecimal!]
+    token1_contains: String
+    token1_ends_with: String
+    token1_gt: String
+    token1_gte: String
+    token1_in: [String!]
+    token1_lt: String
+    token1_lte: String
+    token1_not: String
+    token1_not_contains: String
+    token1_not_ends_with: String
+    token1_not_in: [String!]
+    token1_not_starts_with: String
+    token1_starts_with: String
+    trackedReserveBNB: BigDecimal
+    trackedReserveBNB_gt: BigDecimal
+    trackedReserveBNB_gte: BigDecimal
+    trackedReserveBNB_in: [BigDecimal!]
+    trackedReserveBNB_lt: BigDecimal
+    trackedReserveBNB_lte: BigDecimal
+    trackedReserveBNB_not: BigDecimal
+    trackedReserveBNB_not_in: [BigDecimal!]
+    trackedReserveUSD: BigDecimal
+    trackedReserveUSD_gt: BigDecimal
+    trackedReserveUSD_gte: BigDecimal
+    trackedReserveUSD_in: [BigDecimal!]
+    trackedReserveUSD_lt: BigDecimal
+    trackedReserveUSD_lte: BigDecimal
+    trackedReserveUSD_not: BigDecimal
+    trackedReserveUSD_not_in: [BigDecimal!]
+    untrackedVolumeBNB: BigDecimal
+    untrackedVolumeBNB_gt: BigDecimal
+    untrackedVolumeBNB_gte: BigDecimal
+    untrackedVolumeBNB_in: [BigDecimal!]
+    untrackedVolumeBNB_lt: BigDecimal
+    untrackedVolumeBNB_lte: BigDecimal
+    untrackedVolumeBNB_not: BigDecimal
+    untrackedVolumeBNB_not_in: [BigDecimal!]
+    untrackedVolumeUSD: BigDecimal
+    untrackedVolumeUSD_gt: BigDecimal
+    untrackedVolumeUSD_gte: BigDecimal
+    untrackedVolumeUSD_in: [BigDecimal!]
+    untrackedVolumeUSD_lt: BigDecimal
+    untrackedVolumeUSD_lte: BigDecimal
+    untrackedVolumeUSD_not: BigDecimal
+    untrackedVolumeUSD_not_in: [BigDecimal!]
+    volumeBNB: BigDecimal
+    volumeBNB_gt: BigDecimal
+    volumeBNB_gte: BigDecimal
+    volumeBNB_in: [BigDecimal!]
+    volumeBNB_lt: BigDecimal
+    volumeBNB_lte: BigDecimal
+    volumeBNB_not: BigDecimal
+    volumeBNB_not_in: [BigDecimal!]
+    volumeToken0: BigDecimal
+    volumeToken0_gt: BigDecimal
+    volumeToken0_gte: BigDecimal
+    volumeToken0_in: [BigDecimal!]
+    volumeToken0_lt: BigDecimal
+    volumeToken0_lte: BigDecimal
+    volumeToken0_not: BigDecimal
+    volumeToken0_not_in: [BigDecimal!]
+    volumeToken1: BigDecimal
+    volumeToken1_gt: BigDecimal
+    volumeToken1_gte: BigDecimal
+    volumeToken1_in: [BigDecimal!]
+    volumeToken1_lt: BigDecimal
+    volumeToken1_lte: BigDecimal
+    volumeToken1_not: BigDecimal
+    volumeToken1_not_in: [BigDecimal!]
+    volumeUSD: BigDecimal
+    volumeUSD_gt: BigDecimal
+    volumeUSD_gte: BigDecimal
+    volumeUSD_in: [BigDecimal!]
+    volumeUSD_lt: BigDecimal
+    volumeUSD_lte: BigDecimal
+    volumeUSD_not: BigDecimal
+    volumeUSD_not_in: [BigDecimal!]
+}
+
+input Token_filter {
+    decimals: BigInt
+    decimals_gt: BigInt
+    decimals_gte: BigInt
+    decimals_in: [BigInt!]
+    decimals_lt: BigInt
+    decimals_lte: BigInt
+    decimals_not: BigInt
+    decimals_not_in: [BigInt!]
+    derivedBNB: BigDecimal
+    derivedBNB_gt: BigDecimal
+    derivedBNB_gte: BigDecimal
+    derivedBNB_in: [BigDecimal!]
+    derivedBNB_lt: BigDecimal
+    derivedBNB_lte: BigDecimal
+    derivedBNB_not: BigDecimal
+    derivedBNB_not_in: [BigDecimal!]
+    derivedUSD: BigDecimal
+    derivedUSD_gt: BigDecimal
+    derivedUSD_gte: BigDecimal
+    derivedUSD_in: [BigDecimal!]
+    derivedUSD_lt: BigDecimal
+    derivedUSD_lte: BigDecimal
+    derivedUSD_not: BigDecimal
+    derivedUSD_not_in: [BigDecimal!]
+    id: ID
+    id_gt: ID
+    id_gte: ID
+    id_in: [ID!]
+    id_lt: ID
+    id_lte: ID
+    id_not: ID
+    id_not_in: [ID!]
+    name: String
+    name_contains: String
+    name_ends_with: String
+    name_gt: String
+    name_gte: String
+    name_in: [String!]
+    name_lt: String
+    name_lte: String
+    name_not: String
+    name_not_contains: String
+    name_not_ends_with: String
+    name_not_in: [String!]
+    name_not_starts_with: String
+    name_starts_with: String
+    symbol: String
+    symbol_contains: String
+    symbol_ends_with: String
+    symbol_gt: String
+    symbol_gte: String
+    symbol_in: [String!]
+    symbol_lt: String
+    symbol_lte: String
+    symbol_not: String
+    symbol_not_contains: String
+    symbol_not_ends_with: String
+    symbol_not_in: [String!]
+    symbol_not_starts_with: String
+    symbol_starts_with: String
+}
+
+
+scalar BigDecimal
+
+scalar BigInt
+
+scalar Bytes

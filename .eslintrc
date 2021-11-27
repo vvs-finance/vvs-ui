@@ -12,7 +12,14 @@
           "src/mocks/**"
         ]
       }
-    ]
+    ],
+    "react/default-props-match-prop-types": [1],
+    "react/require-default-props": 0,
+    "lines-between-class-members": 0,
+    "import/prefer-default-export": 0,
+    "@typescript-eslint/no-shadow": 0,
+    "no-restricted-syntax": 0,
+    "no-new": 0
   },
   "overrides": [
     {
