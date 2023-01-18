@@ -70,7 +70,7 @@ lerna run build --scope=vvs-frontend
 lerna run start --stream --scope=vvs-frontend
 ```
 
-### Start `vss-frontend` with build the dependencies
+### Start `vss-frontend` with building the dependencies
 
 ```
 lerna run build --scope={vvs-uikit,vvs-sdk} && lerna run start --stream --scope=vvs-frontend
